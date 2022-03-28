@@ -54,9 +54,21 @@ func _process(delta):
 	else:
 		$FlameParticlesLeftSide.emitting = false
 		$FlameParticlesRightSide.emitting = false
+	
+	update()
 		
 		
 
 func _input(event):
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
+
+
+func _draw():
+	draw_polygon($CollisionShape2D.polygon, [ 
+		Color.aliceblue,
+		Color.aliceblue,
+		Color.aliceblue,
+	])
+
+
